@@ -4,41 +4,24 @@
 
 from __future__ import print_function
 
-class Game:
-    def __init__(self, name):
-        self.name = name
-        self.objects = {}
-        self.p1 = None
-
-        for i in range(10):
-            self.objects[i] = i
-
-    def printName(self):
-        print(self.name)
-
-    def printDic(self):
-        self.p1 = Player("John")
-        self.p1.printStuff(self.objects)
-
-    def printPlayerName(self):
-        print("The players name is " + self.p1.getName())
-
-
-
 class Player:
+    def __init__(self):
+        self.name = None
+        self.playerClass = None
+        self.health = 0
 
-    def __init__(self, name):
-        self.name =name
-
-    def printStuff(self,dictionary):
-        print(dictionary)
+    def setName(self, playerName):
+        self.name = playerName
 
     def getName(self):
         return self.name
 
-        
+
 if __name__ == '__main__':
-    game = Game("lol")
-    game.printDic()
-    game.printPlayerName()
-    #game.printName()
+    player = Player()
+    print("Hello young sir/ma'am. Let me tell you a story.")
+    print("But first I must know your name. So tell me there. What is your name.")
+    name = raw_input()
+    player.setName(name)
+    print("OK " + player.getName() + " but before we continue, you need a profession.")
+    print("Since this is a DnD type game, you need to choose a class and a race.")
